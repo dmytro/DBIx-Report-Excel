@@ -1,0 +1,8 @@
+Changes
+example.pl
+example.sql
+lib/SQL/Reporter/Excel.pm
+Makefile.PL
+MANIFEST
+README
+t/SQL-Reporter-Excel.t
