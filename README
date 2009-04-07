@@ -1,5 +1,5 @@
-SQL-Reporter-Excel version 0.1
-===============================
+SQL-Reporter-Excel version 0.1.1
+================================
 
 SQL::Reporter::Excel's goal is to make creating reports in MS Excel
 format from database easy. It's aimed at SQL developers and/or DBA's
