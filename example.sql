@@ -1,4 +1,4 @@
-/* This is SQLite example for SQL::Reporter::Excel perl module.
+/* This is SQLite example for DBIx::Report::Excel perl module.
 
 Run following command to create test database to be used with example.pl script:
 

@@ -1,11 +1,9 @@
-Revision history for Perl extension SQL::Reporter::Excel.
+Revision history for Perl extension DBIx::Report::Excel.
 
 0.1  Tue Mar 31 19:00:27 2009
 	- original version; created by h2xs 1.23 with options
-		-XA -n SQL::Reporter::Excel
+		-XA -n DBIx::Report::Excel
 
-      Apr 7, 2009
-        - completed coding version 0.1
+      Apr 8, 2009
+        - version 0.1 release
 
-0.1.1 Apr, 8, 2009
-        - small fixes

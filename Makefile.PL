@@ -1,7 +1,7 @@
 use 5.008008;
 use ExtUtils::MakeMaker;
 WriteMakefile(
-    NAME              => 'SQL::Reporter::Excel',
+    NAME              => 'DBIx::Report::Excel',
     VERSION_FROM      => 'lib/SQL/Reporter/Excel.pm',
     PREREQ_PM         => {
 			  Data::Tabular::Dumper => 0.06,

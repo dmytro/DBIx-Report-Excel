@@ -1,7 +1,7 @@
-SQL-Reporter-Excel version 0.1.1
+DBIx-Report-Excel version 0.1.1
 ================================
 
-SQL::Reporter::Excel's goal is to make creating reports in MS Excel
+DBIx::Report::Excel's goal is to make creating reports in MS Excel
 format from database easy. It's aimed at SQL developers and/or DBA's
 who don't know much about Perl programming. I.e. most of the
 information needed to create Excel file is provided directly in SQL
@@ -25,6 +25,7 @@ DEPENDENCIES
 
 This module requires these other modules and libraries:
 
+DBI
 Data::Tabular::Dumper
 Data::Tabular::Dumper::Excel
 SQL::Parser

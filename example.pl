@@ -1,13 +1,13 @@
 #!/usr/bin/perl
-# Example script for SQL::Reporter::Excel.pm module.
+# Example script for DBIx::Report::Excel.pm module.
 # See pod documentation in the module file.
 
 use strict;
-use SQL::Reporter::Excel;
+use DBIx::Report::Excel;
 use DBI;
 use DBD::SQLite;
 
-my $report = SQL::Reporter::Excel->new( "SQLite.xls" );
+my $report = DBIx::Report::Excel->new( "SQLite.xls" );
 
 $report->dbh(DBI->connect("dbi:SQLite:dbname=/tmp/testdb","",""));
 
