@@ -1,8 +1,9 @@
 Changes
 example.pl
 example.sql
-lib/SQL/Reporter/Excel.pm
+lib/DBIx/Report/Excel.pm
 Makefile.PL
 MANIFEST
 README
-t/SQL-Reporter-Excel.t
+t/DBIx-Report-Excel.t
+TODO
