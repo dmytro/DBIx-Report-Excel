@@ -1,12 +1,16 @@
 use 5.008008;
 use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
 WriteMakefile(
     NAME              => 'SQL::Reporter::Excel',
-    VERSION_FROM      => 'lib/SQL/Reporter/Excel.pm', # finds $VERSION
-    PREREQ_PM         => {}, # e.g., Module::Name => 1.1
-    ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
+    VERSION_FROM      => 'lib/SQL/Reporter/Excel.pm',
+    PREREQ_PM         => {
+			  Data::Tabular::Dumper => 0.06,
+			  Data::Tabular::Dumper::Excel => 0.06,
+			  SQL::Parser => 1.16,
+			  SQL::Script => 1.05,
+			  YAML => 0.68,
+			 },
+    ($] >= 5.005 ?
       (ABSTRACT_FROM  => 'lib/SQL/Reporter/Excel.pm', # retrieve abstract from module
        AUTHOR         => 'Dmytro Kovalov <dmytro.kovalov@gmail.com>') : ()),
 );
