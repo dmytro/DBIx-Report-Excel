@@ -1,4 +1,4 @@
-package SQL::Reporter::Excel;
+package DBIx::Report::Excel;
 
 use 5.008008;
 use strict;
@@ -8,12 +8,12 @@ our $VERSION = '0.1.1';
 
 =head1 NAME
 
-SQL::Reporter::Excel - creating Excel reports from SQL statements
+DBIx::Report::Excel - creating Excel reports from SQL statements
 
 =head1 SYNOPSIS
 
-  use SQL::Reporter::Excel;
-  my $report = SQL::Reporter::Excel->new ("SQLite.xls"
+  use DBIx::Report::Excel;
+  my $report = DBIx::Report::Excel->new ("SQLite.xls"
     {
      sql => 'SELECT first_n, last_n FROM people',
      dbh => DBI->connect("dbi:SQLite:dbname=testdb","","")
@@ -25,7 +25,7 @@ SQL::Reporter::Excel - creating Excel reports from SQL statements
 
 =head1 DESCRIPTION
 
-SQL::Reporter::Excel's goal is to make creating reports in Excel from
+DBIx::Report::Excel's goal is to make creating reports in Excel from
 databases easy. It's aimed at SQL developers and/or DBA's who don't
 know much about Perl programming. I.e. most of the information needed
 to create Excel file is provided directly in SQL statement (script)
@@ -130,13 +130,13 @@ our @EXPORT = qw( &write );
 
 =head2 new()
 
-  use SQL::Reporter::Excel;
+  use DBIx::Report::Excel;
 
-  my $report = SQL::Reporter::Excel->new( "Excel.xls" );
+  my $report = DBIx::Report::Excel->new( "Excel.xls" );
 
 Method new() creates new instane of Excel report object.  It takes one required parameter- output Excel file name, and two optitonal parameters: database connection handler (dbh)and SQL query text (sql):
 
-  my $report = SQL::Reporter::Excel->new(
+  my $report = DBIx::Report::Excel->new(
     "Excel.xls",
     {
      dbh => DBI->connect("dbi:SQLite:dbname=testdb","","")
