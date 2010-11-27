@@ -4,7 +4,7 @@ use 5.008008;
 use strict;
 use warnings;
 
-our $VERSION = '0.1';
+our $VERSION = '0.2';
 
 =head1 NAME
 
@@ -13,11 +13,10 @@ DBIx::Report::Excel - creating Excel reports from SQL statements
 =head1 SYNOPSIS
 
   use DBIx::Report::Excel;
-  my $report = DBIx::Report::Excel->new ("SQLite.xls"
-    {
-     sql => 'SELECT first_n, last_n FROM people',
-     dbh => DBI->connect("dbi:SQLite:dbname=testdb","","")
-    }
+  my $report = DBIx::Report::Excel->new (
+	"SQLite.xls",
+     	sql => 'SELECT first_n, last_n FROM people',
+     	dbh => DBI->connect("dbi:SQLite:dbname=testdb","","")
   );
   $report->write();
   $report->close();
@@ -134,14 +133,14 @@ our @EXPORT = qw( &write );
 
   my $report = DBIx::Report::Excel->new( "Excel.xls" );
 
-Method new() creates new instane of Excel report object.  It takes one required parameter- output Excel file name, and two optitonal parameters: database connection handler (dbh)and SQL query text (sql):
+Method new() creates new instance of Excel report object.  It takes one
+required parameter- output Excel file name, and two optitonal parameters:
+database connection handler (dbh) and SQL query text (sql):
 
   my $report = DBIx::Report::Excel->new(
     "Excel.xls",
-    {
-     dbh => DBI->connect("dbi:SQLite:dbname=testdb","","")
+     dbh => DBI->connect("dbi:SQLite:dbname=testdb","",""),
      sql => 'SELECT * FROM names',
-     }
     );
 
 =cut
@@ -186,9 +185,9 @@ sub dbh {
 =head2 sql()
 
 Defines SQL query for the report. Can contain either single SQL
-statement or multiple queris separated by semicolon (C<;>). Each
-separate query will produce its own workseet in multipage Excel
-workbook.
+statement or multiple queris separated by semicolon followed by a new line
+(C<;\s*\n>). Each separate query will produce its own workseet in multipage
+Excel workbook.
 
 An example:
 
@@ -216,7 +215,7 @@ sub sql {
 =head2 write()
 
 Creates and writes new Excel worksheet for each SQL query (or multiple
-worksheets when several SQL queries, joined by C<;>).
+worksheets when several SQL queries, joined by C<;\n>).
 
 Can accept one optional parameter: SQL statement string.
 
@@ -281,6 +280,8 @@ sub __new_page {
   $self->{'excel'}->page_start( $page_name );
 
   $self->{'data'} = $self->{'dbh'}->selectall_arrayref($sql);
+
+  return unless scalar @{ $self->{ data } };
 
   # ----------------------------------------
   # Define column names.
@@ -413,7 +414,7 @@ Dmytro Kovalov, E<lt>dmytro.kovalov@gmail.com<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2009 by Dmytro Kovalov
+Copyright (C) 2009, 2010 by Dmytro Kovalov
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,

@@ -9,14 +9,14 @@ sqlite3 testdb < example.sql
 */
 DROP TABLE names;
 BEGIN TRANSACTION;
-CREATE TABLE people (first_name varchar(40), last_name varchar(40));
+CREATE TABLE "people" (first_name varchar(40), last_name varchar(40));
 INSERT INTO "people" VALUES('Dmytro','Kovalov');
 INSERT INTO "people" VALUES('Me','Again');
 COMMIT;
 
 DROP TABLE fruits;
 BEGIN TRANSACTION;
-CREATE TABLE fruits (f_name varchar(40), color varchar(40));
+CREATE TABLE "fruits" (f_name varchar(40), color varchar(40));
 INSERT INTO "fruits" VALUES('apple','red');
 INSERT INTO "fruits" VALUES('banana','yellow');
 COMMIT;
