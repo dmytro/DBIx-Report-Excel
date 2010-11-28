@@ -404,6 +404,10 @@ worksheet name as above.
 
 =head3 SEE ALSO
 
+ As of 2010, November project repository moved to Github:
+ https://github.com/dmytro/DBIx-Report-Excel
+ 
+
  Script example.pl provides full example of creating report from
  SQLite database. It uses "testdb" database in /tmp directory.
 
