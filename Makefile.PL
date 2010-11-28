@@ -9,6 +9,7 @@ WriteMakefile(
 			  SQL::Parser => 1.16,
 			  SQL::Script => 1.05,
 			  YAML => 0.68,
+			  'Spreadsheet::WriteExcel'	=> '0',
 			 },
     ($] >= 5.005 ?
       (ABSTRACT_FROM  => 'lib/DBIx/Report/Excel.pm', # retrieve abstract from module
