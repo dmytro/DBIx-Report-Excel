@@ -1,5 +1,7 @@
 Revision history for Perl extension DBIx::Report::Excel.
 
+0.2a Sun Nov 28 12:12:45 JST 2010
+	- Spreadsheet::WriteExcel lost dependency fixed
 0.2 Thu Nov 25 13:09:15 JST 2010
 	- bug fix release, fixed
 	  https://rt.cpan.org/Ticket/Display.html?id=60913
