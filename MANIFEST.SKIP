@@ -29,3 +29,6 @@
 
 # No tarballs!
 \.gz$
+
+# Do not ship TODO
+^TODO$
