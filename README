@@ -1,4 +1,4 @@
-DBIx-Report-Excel version 0.1
+DBIx-Report-Excel version 0.3
 =============================
 
 DBIx::Report::Excel's goal is to make creating reports in MS Excel
@@ -28,6 +28,7 @@ This module requires these other modules and libraries:
 DBI
 Data::Tabular::Dumper
 Data::Tabular::Dumper::Excel
+Spreadsheet::WriteExcel
 SQL::Parser
 SQL::Script
 YAML
@@ -37,7 +38,7 @@ COPYRIGHT AND LICENCE
 
 Put the correct copyright and licence information here.
 
-Copyright (C) 2009 by Dmytro Kovalov
+Copyright (C) 2009, 2010 by Dmytro Kovalov
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,
