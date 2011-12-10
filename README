@@ -33,15 +33,19 @@ SQL::Parser
 SQL::Script
 YAML
 
+SOURCE CODE
+
+Source code of this module is hosted at Github. Latest version always 
+avaliable from https://github.com/dmytro/DBIx-Report-Excel.
+
 
 COPYRIGHT AND LICENCE
 
 Put the correct copyright and licence information here.
 
-Copyright (C) 2009, 2010 by Dmytro Kovalov
+Copyright (C) 2009, 2010, 2011 by Dmytro Kovalov
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,
 at your option, any later version of Perl 5 you may have available.
-
 
