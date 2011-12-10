@@ -32,3 +32,6 @@
 
 # Do not ship TODO
 ^TODO$
+
+# Skip temp files from tests
+^\./t/tmp/.*

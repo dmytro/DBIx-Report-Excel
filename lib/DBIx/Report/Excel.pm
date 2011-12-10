@@ -288,7 +288,7 @@ sub __new_page {
   my $parser = SQL::Parser->new();
   $parser->parse($sql);
 
-  if ( scalar @{$parser->structure->{'column_names'}} == scalar @{$self->{'data'}->[0]} ) {
+  if ( scalar @{$parser->structure->{'column_defs'}} == scalar @{$self->{'data'}->[0]} ) {
 				# i.e. column number in SQL statement
 				# same as number of actually selected
 				# columns (it's not  "SELECT *")
