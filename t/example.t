@@ -6,12 +6,28 @@ use DBIx::Report::Excel;
 use DBI;
 use DBD::SQLite;
 
-my $output = "t/tmp/SQLite.xls";
-my $testdb = "t/tmp/testdb";
+
+our $output = "t/tmp/SQLite.xls";
+our $testdb = "t/tmp/testdb";
 mkdir "t/tmp";
 unlink $output, $testdb;
 
-system("sqlite3 $testdb < t/data/example.sql ") ==  0 or die "Cannot create test DB: $?";
+#
+# Create and populate test DB
+#
+my $testdata = DBI->connect("dbi:SQLite:dbname=$testdb","","");
+$testdata->do($_) foreach (
+'DROP TABLE IF EXISTS "people"',
+'CREATE TABLE "people" (first_name varchar(40), last_name varchar(40))',
+'INSERT INTO "people" VALUES("Dmytro","Kovalov")',
+'INSERT INTO "people" VALUES("Me","Again")',
+
+'DROP TABLE IF EXISTS "fruits"',
+'CREATE TABLE "fruits" (f_name varchar(40), color varchar(40))',
+'INSERT INTO "fruits" VALUES("apple","red")',
+'INSERT INTO "fruits" VALUES("banana","yellow")'
+);
+$testdata->disconnect();
 
 my $report = DBIx::Report::Excel->new( $output );
 
@@ -72,3 +88,4 @@ title: More Fruits
 $report->close();
 ok( -f $output);
 ok( -s $output ne 0);
+unlink $output, $testdb;
