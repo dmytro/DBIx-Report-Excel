@@ -1,6 +1,9 @@
 DBIx-Report-Excel version 0.3
 =============================
 
+
+[![Build Status](https://secure.travis-ci.org/dmytro/DBIx-Report-Excel.png)](http://travis-ci.org/dmytro/DBIx-Report-Excel)
+
 DBIx::Report::Excel's goal is to make creating reports in MS Excel
 format from database easy. It's aimed at SQL developers and/or DBA's
 who don't know much about Perl programming. I.e. most of the
@@ -13,18 +16,23 @@ worksheet.
 
 
 INSTALLATION
+------------
 
 To install this module type the following:
 
+````shell
    perl Makefile.PL
    make
    make test
    make install
+````
 
 DEPENDENCIES
+------------
 
 This module requires these other modules and libraries:
 
+````
 DBI
 Data::Tabular::Dumper
 Data::Tabular::Dumper::Excel
@@ -32,14 +40,17 @@ Spreadsheet::WriteExcel
 SQL::Parser
 SQL::Script
 YAML
+````
 
 SOURCE CODE
+-----------
 
 Source code of this module is hosted at Github. Latest version always 
-avaliable from https://github.com/dmytro/DBIx-Report-Excel.
+available from https://github.com/dmytro/DBIx-Report-Excel.
 
 
 COPYRIGHT AND LICENCE
+---------------------
 
 Put the correct copyright and licence information here.
 
